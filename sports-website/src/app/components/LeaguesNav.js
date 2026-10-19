@@ -5,15 +5,17 @@ const leagues = [
   { id: 'PD', name: 'الدوري الإسباني', emblem: 'https://crests.football-data.org/PD.png' },
   { id: 'SA', name: 'الدوري الإيطالي', emblem: 'https://crests.football-data.org/SA.png' },
   { id: 'BL1', name: 'الدوري الألماني', emblem: 'https://crests.football-data.org/BL1.png' },
+  { id: 'FL1', name: 'الدوري الفرنسي', emblem: 'https://crests.football-data.org/FL1.png' },
+  { id: 'CL', name: 'دوري أبطال أوروبا', emblem: 'https://crests.football-data.org/CL.png' },
 ];
 
 export default function LeaguesNav({ activeLeague }) {
   return (
     <section className="mb-8 bg-green-50/70 border border-green-200/80 p-5 rounded-3xl shadow-sm">
       <h2 className="text-xl font-bold mb-4 text-green-900 flex items-center gap-2">
-        <span></span> الدوريات الكبرى 
+        <span></span> البطولات والدوريات الكبرى 
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {leagues.map((league) => {
           const isActive = activeLeague === league.id;
           return (

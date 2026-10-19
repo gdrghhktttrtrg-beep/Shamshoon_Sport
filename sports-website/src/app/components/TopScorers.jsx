@@ -44,7 +44,14 @@ export default async function TopScorers({ league = 'PL' }) {
                 <tr key={item.player.id} className="hover:bg-green-50/40 transition">
                   <td className="p-4 font-bold text-green-700">{index + 1}</td>
                   <td className="p-4 font-semibold text-slate-800">{item.player.name}</td>
-                  <td className="p-4 text-slate-500">{item.team.name}</td>
+                  <td className="p-4 text-slate-600 flex items-center gap-2">
+                    {item.team.crest ? (
+                      <img src={item.team.crest} alt={item.team.name} className="w-5 h-5 object-contain" />
+                    ) : (
+                      <div className="w-5 h-5 bg-slate-200 rounded-full"></div>
+                    )}
+                    <span>{item.team.name}</span>
+                  </td>
                   <td className="p-4 text-center font-bold text-slate-900">{item.goals}</td>
                 </tr>
               ))
